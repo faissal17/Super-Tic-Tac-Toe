@@ -6,7 +6,7 @@ body {
   margin: 50px auto;
 }
 .gameStart {
-  margin-top: 10%;
+  margin-top: 5%;
   text-align: center;
   font-family: cursive;
 }
@@ -48,4 +48,15 @@ body {
 }
 .error-message {
   color: red;
+}
+.rules {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  justify-content: center;
+  align-items: center;
+}
+.rules p {
+  color: blue;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 20px;
 }

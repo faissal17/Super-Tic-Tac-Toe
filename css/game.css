@@ -5,3 +5,17 @@ body {
   align-items: center;
   margin: 10px auto;
 }
+.players p {
+  font-size: 18px;
+  font-weight: 600;
+}
+.players p #player1Name {
+  font-size: 18px;
+  font-weight: 600;
+  color: rgb(158, 2, 2);
+}
+.players p #player2Name {
+  font-size: 18px;
+  font-weight: 600;
+  color: rgb(2, 62, 158);
+}

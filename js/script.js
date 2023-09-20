@@ -26,8 +26,5 @@ function validatePlayers() {
   window.localStorage.setItem("player1Name", player1Name);
   window.localStorage.setItem("player2Name", player2Name);
 
-  var storedPlayer1Name = window.localStorage.getItem("player1Name");
-  var storedPlayer2Name = window.localStorage.getItem("player2Name");
-
-  // window.location.href = "game.html";
+  window.location.href = "game.html";
 }
