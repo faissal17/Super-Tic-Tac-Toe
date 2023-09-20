@@ -16,20 +16,20 @@ body {
 }
 .player1 {
   width: 80%;
-  padding: 12px;
+  padding: 14px 24px;
   border: 3px solid #ccc;
   border-radius: 10px;
   margin-right: 10px;
 }
 .player2 {
   width: 80%;
-  padding: 12px;
+  padding: 14px 24px;
   border: 3px solid #ccc;
   border-radius: 10px;
   margin-left: 10px;
 }
 .Start {
-  margin-top: 20px;
+  margin-top: 15px;
   cursor: pointer;
   font-size: 16px;
   line-height: 20px;

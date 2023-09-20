@@ -3,7 +3,6 @@ function validatePlayers() {
   var player2 = document.querySelector(".player2");
   var player1Error = document.querySelector("#player1Error");
   var player2Error = document.querySelector("#player2Error");
-
   if (player1.value.trim() === "") {
     player1.classList.add("error");
     player1Error.textContent = "Player 1 name cannot be empty";
@@ -20,6 +19,5 @@ function validatePlayers() {
     player2.classList.remove("error");
     player2Error.textContent = "";
   }
-
   window.location.href = "game.html";
 }
