@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="images.png" type="image/x-icon" />
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="gameStart">
+      <div>
+        <h1>Mega Tic-Tac-Toe</h1>
+      </div>
+      <div class="playersInput">
+        <input
+          placeholder="Player 1 name"
+          type="text"
+          name="Player1"
+          class="player1"
+        />
+        <input
+          placeholder="Player 2 name"
+          type="text"
+          name="Player2"
+          class="player2"
+        />
+      </div>
+      <div class="error-section">
+        <span class="error-message" id="player1Error"></span>
+        <span class="error-message" id="player2Error"></span>
+      </div>
+      <button type="button" class="Start" onclick="validatePlayers()">
+        Start The game
+      </button>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
