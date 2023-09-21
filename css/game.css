@@ -3,19 +3,43 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 10px auto;
 }
+
 .players p {
   font-size: 18px;
   font-weight: 600;
+  margin: 5px 0;
 }
-.players p #player1Name {
-  font-size: 18px;
-  font-weight: 600;
+
+#player1Name {
   color: rgb(158, 2, 2);
 }
-.players p #player2Name {
-  font-size: 18px;
-  font-weight: 600;
+
+#player2Name {
   color: rgb(2, 62, 158);
+}
+
+#gameBoard {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  grid-gap: 5px;
+  max-width: 800px;
+  margin: 20px auto;
+  justify-items: center;
+}
+
+.square {
+  width: 30px;
+  height: 30px;
+  background-color: #eee;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.square:hover {
+  background-color: #ddd;
 }
