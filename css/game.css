@@ -27,10 +27,13 @@ body {
   margin: 20px auto;
   justify-items: center;
 }
-
+#info {
+  font-weight: 600;
+}
 .square {
   width: 30px;
   height: 30px;
+  box-sizing: border-box;
   background-color: #eee;
   border: 1px solid black;
   display: flex;
@@ -42,4 +45,34 @@ body {
 
 .square:hover {
   background-color: #ddd;
+}
+.circle {
+  height: 0px;
+  width: 0px;
+  border-radius: 50%;
+  border: 13px solid rgb(2, 62, 158);
+}
+.cross {
+  width: 20px;
+  height: 30px;
+  position: relative;
+  transform: rotate(45deg);
+}
+.cross::before,
+.cross::after {
+  content: "";
+  position: absolute;
+  background-color: red;
+}
+.cross::before {
+  left: 50%;
+  width: 30%;
+  margin-left: -15%;
+  height: 100%;
+}
+.cross::after {
+  top: 50%;
+  height: 30%;
+  margin-top: -15%;
+  width: 100%;
 }
