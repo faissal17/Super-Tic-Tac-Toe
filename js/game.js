@@ -7,6 +7,8 @@ document.getElementById("player2Name").innerHTML = storedPlayer2Name;
 const game = document.querySelector("#gameBoard");
 let info = document.querySelector("#info");
 
+const boeardSize = 399;
+
 const StartCells = () => {
   let CellsArray = [];
 
@@ -46,22 +48,30 @@ function play(e) {
 function Winner(selectedCell) {
   let cellSquare = document.querySelectorAll(".square");
   const selectedCellId = parseInt(selectedCell.id);
-  let streak = 1;
+  let streak = 0;
 
-  for (let i = selectedCellId + 1; i < selectedCellId + 5; i++) {
-    if (cellSquare[i].hasChildNodes()) {
-      if (
-        selectedCell.children[0].getAttribute("class") ===
-        cellSquare[i].children[0].getAttribute("class")
-      ) {
-        streak++;
+  for (let i = selectedCellId - 4; i < selectedCellId + 4; i++) {
+    if (i <= boeardSize && i >= 0) {
+      if (cellSquare[i] && cellSquare[i].hasChildNodes()) {
+        if (
+          selectedCell.children[0].getAttribute("class") ===
+          cellSquare[i].children[0].getAttribute("class")
+        ) {
+          console.log("it has a child");
+          streak++;
+          if (streak >= 5) break;
+        } else {
+          streak = 0;
+          console.log("there is a child but they are not the same");
+        }
       } else {
-        console.log("they are not the same");
-        break;
+        streak = 0;
+        console.log("the square is empty");
       }
-    } else {
-      console.log("the square is empty");
-      break;
     }
+  }
+  console.log(streak);
+  if (streak === 5) {
+    alert("Winner!");
   }
 }
