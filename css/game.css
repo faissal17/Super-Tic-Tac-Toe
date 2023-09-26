@@ -4,7 +4,17 @@ body {
   justify-content: center;
   align-items: center;
 }
-
+.game-section h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.game-section .players {
+  display: flex;
+  justify-content: space-around;
+}
 .players p {
   font-size: 18px;
   font-weight: 600;
@@ -29,6 +39,10 @@ body {
 }
 #info {
   font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
 }
 .square {
   width: 30px;

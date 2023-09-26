@@ -7,6 +7,8 @@ document.getElementById("player2Name").innerHTML = storedPlayer2Name;
 const game = document.querySelector("#gameBoard");
 let info = document.querySelector("#info");
 
+let winnerName = null;
+
 const boeardSize = 399;
 
 const StartCells = () => {
@@ -49,6 +51,7 @@ function Winner(selectedCell) {
   let cellSquare = document.querySelectorAll(".square");
   const selectedCellId = parseInt(selectedCell.id);
   let streak = 0;
+  let score = 0;
 
   for (let i = selectedCellId - 4; i <= selectedCellId + 4; i++) {
     if (i <= boeardSize && i >= 0) {
@@ -72,7 +75,8 @@ function Winner(selectedCell) {
   }
   console.log(streak);
   if (streak >= 5) {
-    alert("Winner!");
+    winnerName = go === "cross" ? storedPlayer2Name : storedPlayer1Name;
+    alert("Winner: " + winnerName);
   }
   for (let i = selectedCellId - 80; i <= selectedCellId + 80; i += 20) {
     if (i <= boeardSize && i >= 0) {
@@ -96,7 +100,7 @@ function Winner(selectedCell) {
   }
   console.log(streak);
   if (streak >= 5) {
-    alert("Winner!");
+    alert(WinnerPlayer);
   }
   for (let i = selectedCellId - 84; i <= selectedCellId + 84; i += 21) {
     if (i <= boeardSize && i >= 0) {
