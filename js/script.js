@@ -1,11 +1,11 @@
 function validatePlayers() {
-  var player1 = document.querySelector(".player1");
-  var player2 = document.querySelector(".player2");
-  var player1Error = document.querySelector("#player1Error");
-  var player2Error = document.querySelector("#player2Error");
+  let player1 = document.querySelector(".player1");
+  let player2 = document.querySelector(".player2");
+  let player1Error = document.querySelector("#player1Error");
+  let player2Error = document.querySelector("#player2Error");
 
-  var player1Name = player1.value.trim();
-  var player2Name = player2.value.trim();
+  let player1Name = player1.value.trim();
+  let player2Name = player2.value.trim();
 
   if (player1Name === "") {
     player1.classList.add("error");

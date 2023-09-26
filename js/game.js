@@ -1,5 +1,5 @@
-var storedPlayer1Name = window.localStorage.getItem("player1Name");
-var storedPlayer2Name = window.localStorage.getItem("player2Name");
+let storedPlayer1Name = window.localStorage.getItem("player1Name");
+let storedPlayer2Name = window.localStorage.getItem("player2Name");
 
 document.getElementById("player1Name").innerHTML = storedPlayer1Name;
 document.getElementById("player2Name").innerHTML = storedPlayer2Name;
@@ -50,7 +50,7 @@ function Winner(selectedCell) {
   const selectedCellId = parseInt(selectedCell.id);
   let streak = 0;
 
-  for (let i = selectedCellId - 4; i < selectedCellId + 4; i++) {
+  for (let i = selectedCellId - 4; i <= selectedCellId + 4; i++) {
     if (i <= boeardSize && i >= 0) {
       if (cellSquare[i] && cellSquare[i].hasChildNodes()) {
         if (
@@ -71,7 +71,31 @@ function Winner(selectedCell) {
     }
   }
   console.log(streak);
-  if (streak === 5) {
+  if (streak >= 5) {
+    alert("Winner!");
+  }
+  for (let i = selectedCellId - 80; i <= selectedCellId + 80; i += 20) {
+    if (i <= boeardSize && i >= 0) {
+      if (cellSquare[i] && cellSquare[i].hasChildNodes()) {
+        if (
+          selectedCell.children[0].getAttribute("class") ===
+          cellSquare[i].children[0].getAttribute("class")
+        ) {
+          console.log("it has a child");
+          streak++;
+          if (streak >= 5) break;
+        } else {
+          streak = 0;
+          console.log("there is a child but they are not the same");
+        }
+      } else {
+        streak = 0;
+        console.log("the square is empty");
+      }
+    }
+  }
+  console.log(streak);
+  if (streak >= 5) {
     alert("Winner!");
   }
 }
