@@ -28,3 +28,19 @@ function validatePlayers() {
 
   window.location.href = "game.html";
 }
+
+function SelectGame() {
+  let player2 = document.querySelector(".player2");
+  let player1 = document.querySelector(".player1");
+  let start = document.querySelector("#typeOfGame");
+  if (start) {
+    player2.style.display = "none";
+    player1.style.width = "50%";
+    player1.style.position = "relative";
+    player1.style.marginTop = "20px";
+    player1.style.top = "50%";
+    player1.style.left = "50%";
+    player1.style.transform = "translate(-50%, -50%)";
+    console.log("yes");
+  }
+}

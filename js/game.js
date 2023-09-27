@@ -121,7 +121,7 @@ function Winner(selectedCell) {
         console.log("the square is empty");
       }
     }
-  } 
+  }
   console.log(streak);
   if (streak >= 5) {
     Swal.fire("Good job!", "The Winner is " + winnerName, "success");

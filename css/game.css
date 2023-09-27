@@ -15,6 +15,7 @@ body {
   display: flex;
   justify-content: space-around;
 }
+
 .players p {
   font-size: 18px;
   font-weight: 600;

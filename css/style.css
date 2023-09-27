@@ -10,6 +10,21 @@ body {
   text-align: center;
   font-family: cursive;
 }
+.SelectType {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.SelectType select {
+  padding: 13px;
+  border-radius: 17px;
+  margin-top: 20px;
+  box-shadow: aliceblue 3px 3px 10px;
+}
+.SelectType select option {
+  padding: 5px;
+  border-radius: 17px;
+}
 .playersInput {
   display: flex;
   margin-top: 5%;

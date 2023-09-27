@@ -8,8 +8,16 @@
   </head>
   <body>
     <div class="gameStart">
-      <div>
-        <h1>Mega Tic-Tac-Toe</h1>
+      <h1 class="hone">Mega Tic-Tac-Toe</h1>
+      <div class="SelectType">
+        <select name="typeOfGame" id="typeOfGame" onchange="SelectGame()">
+          <option selected value="vsFriend" id="vsFriend">
+            Play with friend
+          </option>
+          <option value="vsMachine" id="vsMachine">
+            Play with the machine
+          </option>
+        </select>
       </div>
       <div class="playersInput">
         <input
@@ -34,10 +42,7 @@
               The first player to get 5 of his marks in a row (up, down, across,
               or diagonally) is the winner.
             </li>
-            <li>
-              the winner name will turn to the color green and the loser will
-              turn to the color black.
-            </li>
+            <li>the winner will get an alert of his name on it</li>
           </ul>
         </div>
       </div>
