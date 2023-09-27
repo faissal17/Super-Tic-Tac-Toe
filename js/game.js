@@ -7,7 +7,7 @@ document.getElementById("player2Name").innerHTML = storedPlayer2Name;
 const game = document.querySelector("#gameBoard");
 let info = document.querySelector("#info");
 
-let winnerName = null;
+let winnerName = "";
 
 const boeardSize = 399;
 
@@ -52,6 +52,7 @@ function Winner(selectedCell) {
   const selectedCellId = parseInt(selectedCell.id);
   let streak = 0;
   let score = 0;
+  let winnerName = go === "cross" ? storedPlayer2Name : storedPlayer1Name;
 
   for (let i = selectedCellId - 4; i <= selectedCellId + 4; i++) {
     if (i <= boeardSize && i >= 0) {
@@ -75,8 +76,7 @@ function Winner(selectedCell) {
   }
   console.log(streak);
   if (streak >= 5) {
-    winnerName = go === "cross" ? storedPlayer2Name : storedPlayer1Name;
-    alert("Winner: " + winnerName);
+    Swal.fire("Good job!", "The Winner is " + winnerName, "success");
   }
   for (let i = selectedCellId - 80; i <= selectedCellId + 80; i += 20) {
     if (i <= boeardSize && i >= 0) {
@@ -100,7 +100,7 @@ function Winner(selectedCell) {
   }
   console.log(streak);
   if (streak >= 5) {
-    alert(WinnerPlayer);
+    Swal.fire("Good job!", "The Winner is " + winnerName, "success");
   }
   for (let i = selectedCellId - 84; i <= selectedCellId + 84; i += 21) {
     if (i <= boeardSize && i >= 0) {
@@ -121,9 +121,9 @@ function Winner(selectedCell) {
         console.log("the square is empty");
       }
     }
-  }
+  } 
   console.log(streak);
   if (streak >= 5) {
-    alert("Winner!");
+    Swal.fire("Good job!", "The Winner is " + winnerName, "success");
   }
 }
