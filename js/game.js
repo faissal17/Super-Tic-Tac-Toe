@@ -4,6 +4,9 @@ let storedPlayer2Name = window.localStorage.getItem("player2Name");
 document.getElementById("player1Name").innerHTML = storedPlayer1Name;
 document.getElementById("player2Name").innerHTML = storedPlayer2Name;
 
+let Score1 = document.getElementById("player1Score");
+let Score2 = document.getElementById("player2Score");
+
 const game = document.querySelector("#gameBoard");
 let info = document.querySelector("#info");
 
@@ -46,12 +49,12 @@ function play(e) {
   console.log(e.target);
   Winner(e.target);
 }
-
 function Winner(selectedCell) {
   let cellSquare = document.querySelectorAll(".square");
   const selectedCellId = parseInt(selectedCell.id);
   let streak = 0;
-  let score = 0;
+  let score1 = parseInt(localStorage.getItem("score1")) || 0;
+  let score2 = parseInt(localStorage.getItem("score2")) || 0;
   let winnerName = go === "cross" ? storedPlayer2Name : storedPlayer1Name;
 
   for (let i = selectedCellId - 4; i <= selectedCellId + 4; i++) {
@@ -76,6 +79,15 @@ function Winner(selectedCell) {
   }
   console.log(streak);
   if (streak >= 5) {
+    if (winnerName === storedPlayer1Name) {
+      score1++;
+      localStorage.setItem("score1", score1);
+      Score1.textContent = "Score : " + score1;
+    } else if (winnerName === storedPlayer2Name) {
+      score2++;
+      localStorage.setItem("score2", score2);
+      Score2.textContent = "Score : " + score2;
+    }
     Swal.fire("Good job!", "The Winner is " + winnerName, "success");
   }
   for (let i = selectedCellId - 80; i <= selectedCellId + 80; i += 20) {
